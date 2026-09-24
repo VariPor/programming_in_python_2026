@@ -20,11 +20,11 @@ def print_name(func):
 
 def calc_time_print_name(func):
     def wrapper(*args, **kwargs):
-        print(func.__name__)
+
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print("Затрачено времени:", end - start)
+        print(func.__name__, "Затрачено времени:", end - start)
         return result
     return wrapper
 
