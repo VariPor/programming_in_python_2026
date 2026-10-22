@@ -4,7 +4,7 @@ import cv2
 from object_analysis import MonochromeImage, FilteredAnalysis
 
 if __name__ == "__main__":
-    img_name = "/home/var/python/practice_6_oop_patterns/practice_7_oop_patterns/data/1.jpg"
+    img_name = "/home/var/python/programming_in_python_2026/practice_6_oop_patterns/practice_7_oop_patterns/data/1.jpg"
     img = cv2.imread(img_name, cv2.IMREAD_GRAYSCALE)
     assert img is not None, "file could not be read, check with os.path.exists()"
     

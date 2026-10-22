@@ -64,14 +64,13 @@ class MonochromeImage(BinaryImage):
         pass
 
     def noise_filtering(self, image):
-        kernel = np.ones((5, 5), np.float32) / 25
-        dst = cv2.filter2D(image, -1, kernel)
+        blur = cv2.GaussianBlur(image,(5,5),0)
         plt.subplot(121), plt.imshow(image, cmap="gray"), plt.title("Original")
         plt.xticks([]), plt.yticks([])
-        plt.subplot(122), plt.imshow(dst, cmap="gray"), plt.title("Averaging")
+        plt.subplot(122), plt.imshow(blur, cmap="gray"), plt.title("Gauss")
         plt.xticks([]), plt.yticks([])
         plt.show()
-        return dst
+        return blur
 
     def segmentation(self, image):
         edges = cv2.Canny(image, 100, 200)
